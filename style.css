@@ -1,25 +1,50 @@
 body {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: flex-end;
 }
 
 .giantCookie {
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
     background-color: #A98657;
     text-align: center;
     border-radius: 50%;
     border: 2px solid black;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .buyClick {
     width: 220px;
-    height: 220px;
     background-color: rgba(2, 160, 15, 1);
-    filter: blur(2px);
+    filter: grayscale(100%) blur(1px);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#smallClicker {
+    height: 220px;
+}
+
+#mediumClicker {
+    height: 270px;
+}
+
+#hugeClicker {
+    height: 320px;
+}
+
+#result {
+    font-size: 10em;
+    color: white;
 }

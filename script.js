@@ -19,7 +19,7 @@ const sleep = (delay) => {
 };
 
 const displayScore = () => {
-    result.innerHTML = `Number of Cookies: ${score}`;
+    result.innerHTML = `${score}`;
 };
 
 const addCookie = () => {
@@ -30,21 +30,28 @@ const addCookie = () => {
 
 const displayClicker = () => {
     if (score >= 10000) {
-        hugeClicker.style.filter = 'blur(0px)';
+        hugeClicker.style.filter = 'grayscale(0%) blur(0px)';
         isHugeClickable = true;
-    } else if (score >= 1000) {
-        mediumClicker.style.filter = 'blur(0px)';
+    };
+    if (score >= 1000) {
+        mediumClicker.style.filter = 'grayscale(0%) blur(0px)';
         isMediumClickable = true;
-    } else if (score >= 50) {
-        smallClicker.style.filter = 'blur(0px)';
+    };
+    if (score >= 50) {
+        smallClicker.style.filter = 'grayscale(0%) blur(0px)';
         isSmallClickable = true;
-    } else {
-        smallClicker.style.filter = 'blur(2px)';
-        mediumClicker.style.filter = 'blur(2px)';
-        hugeClicker.style.filter = 'blur(2px)';
+    };
+    if (score < 50) {
+        smallClicker.style.filter = 'grayscale(100%) blur(1px)';
         isSmallClickable = false;
+    };
+    if (score < 1000) {
+        mediumClicker.style.filter = 'grayscale(100%) blur(1px)';
         isMediumClickable = false;
-        isHugeClickable = false;
+    };
+    if (score < 10000) {
+        hugeClicker.style.filter = 'grayscale(100%) blur(1px)';
+        isHugeClickable = false; 
     };
 };
 
